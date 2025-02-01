@@ -39,10 +39,10 @@ public class StudentController {
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteStudent(@PathVariable Long id) {
+	public ResponseEntity<String> deleteStudent(@PathVariable int id) {
 	    try {
-	    	int intValue = id.intValue();
-	        boolean isDeleted = service.deleteStudent(intValue);
+	    	
+	        boolean isDeleted = service.deleteStudent(id);
 	        if (isDeleted) {
 	            return ResponseEntity.ok("Student record deleted successfully");
 	        } else {
